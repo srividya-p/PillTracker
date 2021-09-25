@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "203558311770",
+    "project_id": "pilltracker-d23a2",
+    "storage_bucket": "pilltracker-d23a2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:203558311770:android:5365c32600f864e4874563",
+        "android_client_info": {
+          "package_name": "com.example.pilltracker"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "203558311770-6mq8aojrhbq7er5annvgkj3j6p94h7rs.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAwK9Xvd1I49s6870MOpv6SMPSd1c_0zOM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "203558311770-6mq8aojrhbq7er5annvgkj3j6p94h7rs.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
