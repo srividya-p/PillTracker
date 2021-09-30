@@ -14,6 +14,7 @@ import android.location.LocationManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.Settings;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -31,6 +32,7 @@ public class DashboardActivity extends AppCompatActivity {
 
     private ImageButton logoutButton;
     private ImageView locationTab;
+    private ImageView addMedicineTab;
     private TextView userGreet;
 
     private FirebaseUser currentUser;
@@ -43,16 +45,18 @@ public class DashboardActivity extends AppCompatActivity {
 
         logoutButton = findViewById(R.id.logoutImageButton);
         locationTab = findViewById(R.id.locationTab);
+        addMedicineTab = findViewById(R.id.addMedicineTab);
         userGreet = findViewById(R.id.userGreet);
 
         currentUser = FirebaseAuth.getInstance().getCurrentUser();
 
         if(currentUser != null) {
-            userGreet.setText("Hello "+currentUser.getDisplayName()+"!");
-
+//          Log.d("WHAT?", currentUser.getDisplayName());
             String name = currentUser.getDisplayName();
             String email = currentUser.getEmail();
             Uri photoUrl = currentUser.getPhotoUrl();
+
+            userGreet.setText(name);
         }
 
         //String url = "https://www.pinclipart.com/picdir/middle/182-1821638_logout-icon-png-red-clipart.png";
@@ -71,9 +75,17 @@ public class DashboardActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 String url = "http://maps.google.co.uk/maps?q=Pharmacy&hl=en";
-                Intent intent = new Intent(Intent.ACTION_VIEW,Uri.parse(url));
-                intent.setClassName("com.google.android.apps.maps","com.google.android.maps.MapsActivity");
-                startActivity(intent);
+                Intent locIntent = new Intent(Intent.ACTION_VIEW,Uri.parse(url));
+                locIntent.setClassName("com.google.android.apps.maps","com.google.android.maps.MapsActivity");
+                startActivity(locIntent);
+            }
+        });
+
+        addMedicineTab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent addMedicineIntent = new Intent(getBaseContext(), AddMedicineActivity.class);
+                startActivity(addMedicineIntent);
             }
         });
     }

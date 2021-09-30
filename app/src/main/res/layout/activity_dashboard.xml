@@ -11,9 +11,10 @@
     <ImageView
         android:id="@+id/locationTab"
         android:layout_width="161dp"
-        android:layout_height="135dp"
+        android:layout_height="150dp"
         android:background="@drawable/round_btns"
         android:backgroundTint="#FFB25A"
+        android:padding="40px"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.14"
@@ -23,57 +24,64 @@
         app:srcCompat="@drawable/ic_baseline_location_on_24" />
 
     <ImageButton
-        android:id="@+id/imageButton4"
+        android:id="@+id/addMedicineTab"
         android:layout_width="167dp"
-        android:layout_height="222dp"
+        android:layout_height="150dp"
         android:background="@drawable/round_btns"
         android:backgroundTint="#FF5958"
         android:contentDescription="Add Button"
+        android:padding="50px"
         android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.856"
+        app:layout_constraintHorizontal_bias="0.86"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.54"
-        app:srcCompat="@android:drawable/ic_menu_add" />
+        app:layout_constraintVertical_bias="0.461"
+        app:srcCompat="@drawable/ic_baseline_alarm_add_24" />
 
     <ImageButton
         android:id="@+id/imageButton5"
         android:layout_width="160dp"
-        android:layout_height="173dp"
+        android:layout_height="150dp"
         android:background="@drawable/round_btns"
         android:backgroundTint="#4CD97A"
         android:contentDescription="View Statistics"
+        android:padding="40px"
+        android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.144"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.755"
-        app:srcCompat="@android:drawable/ic_menu_add" />
+        app:srcCompat="@drawable/ic_baseline_manage_search_24"
+        tools:srcCompat="@drawable/ic_baseline_manage_search_24" />
 
     <ImageButton
         android:id="@+id/imageButton6"
         android:layout_width="168dp"
-        android:layout_height="85dp"
+        android:layout_height="150dp"
         android:background="@drawable/round_btns"
         android:backgroundTint="#4DB5FF"
         android:contentDescription="Prescribed medicines"
+        android:padding="40px"
+        android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.864"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.789"
-        app:srcCompat="@android:drawable/ic_menu_add" />
+        app:layout_constraintVertical_bias="0.755"
+        app:srcCompat="@drawable/ic_baseline_stacked_bar_chart_24"
+        tools:srcCompat="@drawable/ic_baseline_stacked_bar_chart_24" />
 
     <ImageButton
-        android:id="@+id/imageButton7"
+        android:id="@+id/logoutImageButton"
         android:layout_width="341dp"
         android:layout_height="82dp"
         android:background="@drawable/round_btns"
-        android:backgroundTint="#F4EAEA"
+        android:backgroundTint="#F6AAA9"
         android:contentDescription="General Medicines"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -81,7 +89,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.93"
-        app:srcCompat="@android:drawable/ic_menu_add" />
+        app:srcCompat="@drawable/ic_baseline_power_settings_new_24" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="462dp"
@@ -94,46 +102,46 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0">
 
-        <ImageButton
-            android:id="@+id/logoutImageButton"
-            android:layout_width="54dp"
-            android:layout_height="48dp"
-            android:background="#351E60"
-            android:contentDescription="logout"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.929"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.126"
-            app:srcCompat="@drawable/common_full_open_on_phone" />
-
         <ImageView
             android:id="@+id/imageView2"
-            android:layout_width="76dp"
-            android:layout_height="74dp"
+            android:layout_width="67dp"
+            android:layout_height="66dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.677"
+            app:layout_constraintHorizontal_bias="0.42"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.272"
+            app:layout_constraintVertical_bias="0.346"
             app:srcCompat="@mipmap/ic_launcher_foreground" />
 
         <TextView
             android:id="@+id/userGreet"
-            android:layout_width="210dp"
-            android:layout_height="72dp"
+            android:layout_width="298dp"
+            android:layout_height="41dp"
             android:fontFamily="@font/poppins_bold"
-            android:text="Welcome !!!"
             android:textColor="#554545"
             android:textSize="30sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.33"
+            app:layout_constraintHorizontal_bias="0.628"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.368" />
+            app:layout_constraintVertical_bias="0.627" />
+
+        <TextView
+            android:id="@+id/userGreet2"
+            android:layout_width="100dp"
+            android:layout_height="39dp"
+            android:fontFamily="@font/poppins_bold"
+            android:text="Hello"
+            android:textColor="#554545"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.284"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.378" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

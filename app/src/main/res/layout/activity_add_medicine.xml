@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFFFFF"
-    tools:context=".Activity_Add_Medicine">
+    tools:context=".AddMedicineActivity">
 
   <androidx.constraintlayout.widget.ConstraintLayout
       android:id="@+id/constraintLayout"
@@ -61,10 +61,12 @@
           android:hint="Name">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/mName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#F8F4F4"
-            android:fontFamily="@font/poppins_medium" />
+            android:fontFamily="@font/poppins_medium"
+            android:textColorHint="#121111" />
 
       </com.google.android.material.textfield.TextInputLayout>
 
@@ -76,21 +78,24 @@
           android:hint="Description">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/mDesc"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#F8F4F4"
-            android:fontFamily="@font/poppins_medium" />
+            android:fontFamily="@font/poppins_medium"
+            android:textColorHint="#121111" />
 
       </com.google.android.material.textfield.TextInputLayout>
 
 
       <CheckBox
-          android:id="@+id/checkBox"
+          android:id="@+id/isGeneric"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
           android:layout_marginBottom="10dp"
           android:fontFamily="@font/poppins_medium"
-          android:text="Prescribed Medicine" />
+          android:text="Generic Medicine"
+          android:textColorHint="#121111" />
 
       <LinearLayout
           android:layout_width="match_parent"
@@ -101,34 +106,47 @@
 
 
         <TextView
-            android:id="@+id/textView6"
+            android:id="@+id/selectLabel"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="#FFFFFF"
             android:fontFamily="@font/poppins_medium"
             android:text="Select Doses"
+            android:textColorHint="#121111"
             android:textSize="18sp" />
 
         <CheckBox
+            android:id="@+id/isBreakfast"
             android:layout_width="match_parent"
             android:layout_height="38dp"
+            android:background="#FFFFFF"
             android:fontFamily="@font/poppins_medium"
-            android:text="BreakFast" />
+            android:text="BreakFast"
+            android:textColorHint="#121111" />
 
         <CheckBox
+            android:id="@+id/isLunch"
             android:layout_width="match_parent"
             android:layout_height="38dp"
+            android:background="#FFFFFF"
             android:fontFamily="@font/poppins_medium"
-            android:text="Lunch" />
+            android:text="Lunch"
+            android:textColorHint="#121111" />
 
         <CheckBox
+            android:id="@+id/isEvening"
             android:layout_width="match_parent"
             android:layout_height="38dp"
+            android:background="#FFFFFF"
             android:fontFamily="@font/poppins_medium"
-            android:text="Evening" />
+            android:text="Evening"
+            android:textColorHint="#121111" />
 
         <CheckBox
+            android:id="@+id/isDinner"
             android:layout_width="match_parent"
             android:layout_height="38dp"
+            android:background="#FFFFFF"
             android:fontFamily="@font/poppins_medium"
             android:text="Dinner" />
 
@@ -143,11 +161,13 @@
           android:hint="Start Date">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/mStartDate"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#F8F4F4"
             android:fontFamily="@font/poppins_medium"
-            android:inputType="date" />
+            android:inputType="date"
+            android:textColorHint="#121111" />
 
       </com.google.android.material.textfield.TextInputLayout>
 
@@ -159,26 +179,13 @@
           android:hint="End Date">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/mEndDate"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#F8F4F4"
             android:fontFamily="@font/poppins_medium"
-            android:inputType="date" />
-
-      </com.google.android.material.textfield.TextInputLayout>
-
-      <com.google.android.material.textfield.TextInputLayout
-          android:id="@+id/filledTextField_Status"
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:layout_marginBottom="10dp"
-          android:hint="Status">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#F8F4F4"
-            android:fontFamily="@font/poppins_medium" />
+            android:inputType="date"
+            android:textColorHint="#121111" />
 
       </com.google.android.material.textfield.TextInputLayout>
 
@@ -190,11 +197,13 @@
           android:hint="Expiry Date">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/mExpDate"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#F8F4F4"
             android:fontFamily="@font/poppins_medium"
-            android:inputType="date" />
+            android:inputType="date"
+            android:textColorHint="#121111" />
 
       </com.google.android.material.textfield.TextInputLayout>
 
@@ -204,9 +213,10 @@
           android:layout_height="wrap_content"
           android:layout_marginBottom="40dp"
           android:background="@drawable/round_btns"
-          android:backgroundTint="#473F98"
+          android:backgroundTint="#6FDC5B"
           android:fontFamily="@font/poppins_medium"
-          android:text="Submit" />
+          android:text="Submit"
+          android:textSize="16sp" />
 
 
     </LinearLayout>
