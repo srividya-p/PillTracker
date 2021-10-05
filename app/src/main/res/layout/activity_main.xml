@@ -4,13 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#351E60">
+    android:background="#473F98">
 
     <TextView
         android:id="@+id/appName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="132dp"
+        android:fontFamily="@font/poppins_bold"
         android:text="Pill Tracker"
         android:textColor="#ECE4E4"
         android:textSize="48sp"
@@ -24,8 +25,9 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="180dp"
         android:backgroundTint="#6FDC5B"
+        android:fontFamily="@font/poppins_bold"
         android:text="Get Started"
-        android:textColor="#351E60"
+        android:textColor="#473F98"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

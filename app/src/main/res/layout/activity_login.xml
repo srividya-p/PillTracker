@@ -4,21 +4,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#351E60"
+    android:background="#473F98"
     tools:context=".LoginActivity">
 
     <EditText
         android:id="@+id/email"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="32dp"
         android:ems="10"
+        android:fontFamily="@font/poppins_medium"
         android:hint="Email"
         android:inputType="textPersonName"
         android:textColor="#F4F1F1"
         android:textColorHint="#F4EFEF"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/loginPageImage" />
 
@@ -28,6 +29,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="36dp"
         android:ems="10"
+        android:fontFamily="@font/poppins_medium"
         android:hint="Password"
         android:inputType="textPassword"
         android:textColor="#F4F1F1"
@@ -43,8 +45,9 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
         android:backgroundTint="#6FDC5B"
+        android:fontFamily="@font/poppins_bold"
         android:text="Login"
-        android:textColor="#351E60"
+        android:textColor="#473F98"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.507"
         app:layout_constraintStart_toStartOf="parent"
@@ -56,8 +59,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="36dp"
-        android:background="@empty"
-        android:backgroundTint="#351E60"
+        android:backgroundTint="#473F98"
+        android:fontFamily="@font/poppins_medium"
         android:text="Forgot Password?"
         android:textAllCaps="false"
         android:textColor="#8EDBE4"
@@ -73,6 +76,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:backgroundTint="#351E60"
+        android:fontFamily="@font/poppins_medium"
         android:text="Don't have an account? Sign up here"
         android:textAllCaps="false"
         android:textColor="#FFC107"
@@ -89,15 +93,27 @@
         android:paddingTop="5.0dip"
         android:paddingRight="4.0dip"
         android:paddingBottom="1.0dip"
-        app:layout_constraintBottom_toBottomOf="parent">
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:ignore="MissingConstraints">
 
-        <com.shaishavgandhi.loginbuttons.GooglePlusButton
+        <Button
             android:id="@+id/googlePlusButton"
-            android:layout_width="0.0dip"
-            android:layout_height="fill_parent"
+            android:layout_width="450dp"
+            android:layout_height="60dp"
             android:layout_weight="1.0"
+            android:height="40px"
+            android:backgroundTint="#A4E63F3F"
+            android:drawablePadding="20dip"
+            android:fontFamily="@font/poppins_medium"
+            android:gravity="center"
+            android:paddingLeft="30dip"
+            android:paddingRight="26dip"
+            android:singleLine="true"
             android:text="Sign in with Google"
-            android:textAllCaps="false"/>
+            android:textAllCaps="false"
+            android:textSize="14sp"
+            app:icon="@drawable/google_logo"
+            app:iconSize="80px" />
 
     </LinearLayout>
 
@@ -115,27 +131,28 @@
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="56dp"
+        android:layout_marginTop="40dp"
+        android:fontFamily="@font/poppins_bold"
         android:text="Login"
         android:textColor="#F6F3F3"
         android:textSize="34sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@+id/loginProgress" />
 
     <TextView
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_medium"
         android:text="OR"
         android:textColor="#F4F3F3"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/signUpPageButton"
-        app:layout_constraintVertical_bias="0.144" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <ProgressBar
         android:id="@+id/loginProgress"
