@@ -1,8 +1,11 @@
 package com.example.pilltracker;
 
 import java.util.List;
+import java.util.Map;
 
 public class MedicineDosage {
+
+    private String uid;
     private String name;
     private String desc;
     private boolean isGeneric;
@@ -11,10 +14,12 @@ public class MedicineDosage {
     private String endDate;
     private List<Integer> timings;
     private int totalDosage;
+    private List<Integer> dosesTaken;
 
     public MedicineDosage() { }
 
-    public MedicineDosage(String name, String desc, boolean isGeneric, String expDate, String startDate, String endDate, List<Integer> timings, int totalDosage) {
+    public MedicineDosage(String uid, String name, String desc, boolean isGeneric, String expDate, String startDate, String endDate, List<Integer> timings, int totalDosage, List<Integer> dosesTaken) {
+        this.uid = uid;
         this.name = name;
         this.desc = desc;
         this.isGeneric = isGeneric;
@@ -23,7 +28,10 @@ public class MedicineDosage {
         this.endDate = endDate;
         this.timings = timings;
         this.totalDosage = totalDosage;
+        this.dosesTaken = dosesTaken;
     }
+
+    public String getUid() { return this.uid; }
 
     public String getName() {
         return this.name;
@@ -56,4 +64,6 @@ public class MedicineDosage {
     public int getTotalDosage() {
         return this.totalDosage;
     }
+
+    public List<Integer> getDosesTaken() { return this.dosesTaken; }
 }
