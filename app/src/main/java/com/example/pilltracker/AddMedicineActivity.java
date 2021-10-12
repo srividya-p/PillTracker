@@ -271,8 +271,8 @@ public class AddMedicineActivity extends AppCompatActivity {
 //                        setIndividualAlarm(month, day, year, actualTimings[i]+1, 0, "askNotif", mDosage.getName(), mealNames[i], "", "");
 
 //                        TEST
-                        setIndividualAlarm(month, day, year, 19, 50, "showNotif", mDosage.getName(), mealNames[i], "", "");
-                        setIndividualAlarm(month, day, year, 9, 46, "askNotif", mDosage.getName(), mealNames[i], "", "");
+                        setIndividualAlarm(month, day, year, 10, 10, "showNotif", mDosage.getName(), mealNames[i], "", "");
+                        setIndividualAlarm(month, day, year, 10, 10, "askNotif", mDosage.getName(), mealNames[i], "", "");
                     }
                 }
                 currentDate = currentDate.plusDays(1);
@@ -291,7 +291,7 @@ public class AddMedicineActivity extends AppCompatActivity {
 //            setIndividualAlarm(month, day, year, 9, 0, "showNotifExp", mDosage.getName(), "", mDosage.getExpDate(), "rem1");
 
 //            TEST
-            setIndividualAlarm(month, day, year, 16, 5, "showNotifExp", mDosage.getName(), "", mDosage.getExpDate(), "rem2");
+            setIndividualAlarm(month, day, year, 10, 15, "showNotifExp", mDosage.getName(), "", mDosage.getExpDate(), "rem2");
 
 
             //Setting Second Reminder
@@ -335,7 +335,7 @@ public class AddMedicineActivity extends AppCompatActivity {
             intent = new Intent(getApplicationContext(), NotificationReceiver.class);
             intent.putExtra("caller", "showNotif");
             intent.putExtra("title", "Expiry Reminder - "+mName);
-            intent.putExtra("content", "Hey " + username+ "!" +mName + "expires on "+ expDate +"! Remember to restock.");
+            intent.putExtra("content", "Hey " + username+ "!" +mName + " expires on "+ expDate +"! Remember to restock.");
         } else {
             intent = new Intent(getApplicationContext(), NotificationReceiver.class);
             intent.putExtra("caller", "showNotif");
