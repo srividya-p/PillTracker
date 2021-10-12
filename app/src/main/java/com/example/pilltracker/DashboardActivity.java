@@ -31,8 +31,7 @@ public class DashboardActivity extends AppCompatActivity {
     String latitude, longitude;
 
     private ImageButton logoutButton;
-    private ImageView locationTab;
-    private ImageView addMedicineTab;
+    private ImageView locationTab, addMedicineTab, viewMedicinesTab;
     private TextView userGreet;
 
     private FirebaseUser currentUser;
@@ -46,6 +45,7 @@ public class DashboardActivity extends AppCompatActivity {
         logoutButton = findViewById(R.id.logoutImageButton);
         locationTab = findViewById(R.id.locationTab);
         addMedicineTab = findViewById(R.id.addMedicineTab);
+        viewMedicinesTab = findViewById(R.id.viewMedicinesTab);
         userGreet = findViewById(R.id.userGreet);
 
         currentUser = FirebaseAuth.getInstance().getCurrentUser();
@@ -86,6 +86,14 @@ public class DashboardActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent addMedicineIntent = new Intent(getBaseContext(), AddMedicineActivity.class);
                 startActivity(addMedicineIntent);
+            }
+        });
+
+        viewMedicinesTab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent displayMedicineIntent = new Intent(getBaseContext(), DisplayMedicineActivity.class);
+                startActivity(displayMedicineIntent);
             }
         });
     }

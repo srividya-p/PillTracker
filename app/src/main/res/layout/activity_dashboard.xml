@@ -9,7 +9,7 @@
     tools:context=".DashboardActivity">
 
     <ImageButton
-        android:id="@+id/imageButton5"
+        android:id="@+id/viewMedicinesTab"
         android:layout_width="160dp"
         android:layout_height="150dp"
         android:background="@drawable/round_btns"

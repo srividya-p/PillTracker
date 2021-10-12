@@ -68,6 +68,12 @@ public class AddMedicineActivity extends AppCompatActivity {
         mEndDate = findViewById(R.id.mEndDate);
         mExpDate = findViewById(R.id.mExpDate);
 
+        Bundle extras = getIntent().getExtras();
+        if(extras != null) {
+            mName.setText(extras.getString("name"));
+            mDesc.setText(extras.getString("desc"));
+        }
+
         currentUser = FirebaseAuth.getInstance().getCurrentUser();
 
         if(currentUser != null) {
