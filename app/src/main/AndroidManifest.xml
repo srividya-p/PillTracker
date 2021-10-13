@@ -13,6 +13,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.PillTracker">
+        <activity
+            android:name=".StatsActivity"
+            android:exported="true" />
+
         <receiver
             android:name=".NotificationReceiver"
             android:enabled="true"
@@ -58,7 +62,6 @@
             android:resource="@array/preloaded_fonts" />
 
         <service android:name=".NotificationHelper$NotificationActionService" />
-
     </application>
 
 </manifest>

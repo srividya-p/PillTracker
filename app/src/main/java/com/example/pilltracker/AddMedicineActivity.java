@@ -215,7 +215,7 @@ public class AddMedicineActivity extends AppCompatActivity {
             if(e) timings[2] = 1;
             if(d) timings[3] = 1;
 
-            long days = ChronoUnit.DAYS.between(st, en);
+            long days = ChronoUnit.DAYS.between(st, en) + 1;
             int dayDose = 0;
             for(int i:timings) {
                 if(i == 1) dayDose++;

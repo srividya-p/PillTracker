@@ -27,7 +27,7 @@
         tools:srcCompat="@drawable/ic_baseline_manage_search_24" />
 
     <ImageButton
-        android:id="@+id/imageButton6"
+        android:id="@+id/viewStatsTab"
         android:layout_width="168dp"
         android:layout_height="150dp"
         android:background="@drawable/round_btns"
