@@ -4,8 +4,11 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="app/src/main/res/layout/activity_add_medicine.xml" value="0.33" />
-        <entry key="app/src/main/res/layout/activity_dashboard.xml" value="0.2" />
+        <entry key="app/src/main/res/layout/activity_dashboard.xml" value="0.5" />
         <entry key="app/src/main/res/layout/activity_display_medicines.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/activity_image_to_text.xml" value="0.35833333333333334" />
+        <entry key="app/src/main/res/layout/activity_image_to_text_live_stream.xml" value="0.2" />
+        <entry key="app/src/main/res/layout/activity_medicine_added.xml" value="0.35833333333333334" />
         <entry key="app/src/main/res/layout/activity_stats.xml" value="0.34444444444444444" />
       </map>
     </option>

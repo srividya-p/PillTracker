@@ -1,29 +1,18 @@
 package com.example.pilltracker;
 
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
 
-import android.Manifest;
-import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.pm.PackageManager;
-import android.location.Location;
 import android.location.LocationManager;
 import android.net.Uri;
 import android.os.Bundle;
-import android.provider.Settings;
-import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.squareup.picasso.Picasso;
 
 public class DashboardActivity extends AppCompatActivity {
 
@@ -31,7 +20,7 @@ public class DashboardActivity extends AppCompatActivity {
     String latitude, longitude;
 
     private ImageButton logoutButton;
-    private ImageView locationTab, addMedicineTab, viewMedicinesTab, viewStatsTab;
+    private ImageView locationTab, addMedicineTab, viewMedicinesTab, viewStatsTab, imageToTextTab;
     private TextView userGreet;
 
     private FirebaseUser currentUser;
@@ -47,6 +36,7 @@ public class DashboardActivity extends AppCompatActivity {
         addMedicineTab = findViewById(R.id.addMedicineTab);
         viewMedicinesTab = findViewById(R.id.viewMedicinesTab);
         viewStatsTab = findViewById(R.id.viewStatsTab);
+        imageToTextTab = findViewById(R.id.imageToTextTab);
         userGreet = findViewById(R.id.userGreet);
 
         currentUser = FirebaseAuth.getInstance().getCurrentUser();
@@ -103,6 +93,14 @@ public class DashboardActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent viewStatsIntent = new Intent(getBaseContext(), StatsActivity.class);
                 startActivity(viewStatsIntent);
+            }
+        });
+
+        imageToTextTab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent imageToTextIntent = new Intent(getBaseContext(), ImageToTextActivity.class);
+                startActivity(imageToTextIntent);
             }
         });
     }

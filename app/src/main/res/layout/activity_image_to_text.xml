@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F3F3F6"
+    android:orientation="vertical"
+    tools:context=".DisplayMedicineActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="478dp"
+        android:layout_height="150dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/round_nav"
+        android:backgroundTint="#473F98"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.791"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="281dp"
+            android:layout_height="64dp"
+            android:fontFamily="@font/poppins_bold"
+            android:text="Camera Scan"
+            android:textColor="#F3F3F6"
+            android:textSize="35sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.35"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.674" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ImageToTextActivity">
+
+    <ImageButton
+        android:id="@+id/captureAgainButton"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="@drawable/round_btns"
+        android:backgroundTint="#4DB5FF"
+        android:contentDescription="Prescribed medicines"
+        android:padding="60px"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.263"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.849"
+        app:srcCompat="@drawable/ic_baseline_camera_alt_24"
+        tools:srcCompat="@drawable/ic_baseline_camera_alt_24" />
+
+    <ImageButton
+        android:id="@+id/proceedButton"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="@drawable/round_btns"
+        android:backgroundTint="#4CD97A"
+        android:padding="60px"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.729"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.849"
+        app:srcCompat="@drawable/ic_baseline_arrow_forward_24"
+        tools:srcCompat="@drawable/ic_baseline_arrow_forward_24" />
+
+        <ImageView
+            android:id="@+id/capturedImage"
+            android:layout_width="190dp"
+            android:layout_height="198dp"
+            android:layout_marginTop="24dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_baseline_camera_alt_24" />
+
+        <TextView
+            android:id="@+id/extractedText"
+            android:layout_width="296dp"
+            android:layout_height="138dp"
+            android:fontFamily="@font/poppins_medium"
+            android:text="Extracted Text"
+            android:textAlignment="center"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.495"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/capturedImage"
+            app:layout_constraintVertical_bias="0.189" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

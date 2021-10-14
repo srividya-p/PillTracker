@@ -46,18 +46,33 @@
 
     <ImageButton
         android:id="@+id/logoutImageButton"
-        android:layout_width="341dp"
-        android:layout_height="82dp"
+        android:layout_width="159dp"
+        android:layout_height="84dp"
         android:background="@drawable/round_btns"
         android:backgroundTint="#F6AAA9"
         android:contentDescription="General Medicines"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.514"
+        app:layout_constraintHorizontal_bias="0.148"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.93"
+        app:layout_constraintVertical_bias="0.941"
         app:srcCompat="@drawable/ic_baseline_power_settings_new_24" />
+
+    <ImageButton
+        android:id="@+id/imageToTextTab"
+        android:layout_width="157dp"
+        android:layout_height="83dp"
+        android:background="@drawable/round_btns"
+        android:backgroundTint="#E351A1"
+        android:contentDescription="General Medicines"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.866"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.939"
+        app:srcCompat="@drawable/ic_baseline_camera_alt_24" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout2"
