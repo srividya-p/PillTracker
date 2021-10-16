@@ -11,22 +11,22 @@
     <ImageView
         android:id="@+id/apiTab"
         android:layout_width="160dp"
-        android:layout_height="60dp"
+        android:layout_height="110dp"
         android:background="@drawable/round_btns"
         android:backgroundTint="#FFB25A"
         android:padding="40px"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.884"
+        app:layout_constraintHorizontal_bias="0.864"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.789"
+        app:layout_constraintVertical_bias="0.742"
         app:srcCompat="@drawable/ic_baseline_screen_search_desktop_24" />
 
     <ImageButton
         android:id="@+id/viewMedicinesTab"
         android:layout_width="160dp"
-        android:layout_height="150dp"
+        android:layout_height="120dp"
         android:background="@drawable/round_btns"
         android:backgroundTint="#4CD97A"
         android:contentDescription="View Statistics"
@@ -37,14 +37,14 @@
         app:layout_constraintHorizontal_bias="0.864"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.461"
+        app:layout_constraintVertical_bias="0.481"
         app:srcCompat="@drawable/ic_baseline_person_search_24"
         tools:srcCompat="@drawable/ic_baseline_person_search_24" />
 
     <ImageButton
         android:id="@+id/viewStatsTab"
-        android:layout_width="168dp"
-        android:layout_height="150dp"
+        android:layout_width="167dp"
+        android:layout_height="110dp"
         android:background="@drawable/round_btns"
         android:backgroundTint="#4DB5FF"
         android:contentDescription="Prescribed medicines"
@@ -52,51 +52,37 @@
         android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.148"
+        app:layout_constraintHorizontal_bias="0.143"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.757"
+        app:layout_constraintVertical_bias="0.741"
         app:srcCompat="@drawable/ic_baseline_stacked_bar_chart_24"
         tools:srcCompat="@drawable/ic_baseline_stacked_bar_chart_24" />
 
     <ImageButton
-        android:id="@+id/logoutImageButton"
-        android:layout_width="159dp"
-        android:layout_height="84dp"
-        android:background="@drawable/round_btns"
-        android:backgroundTint="#F6AAA9"
-        android:contentDescription="General Medicines"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.148"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.941"
-        app:srcCompat="@drawable/ic_baseline_power_settings_new_24" />
-
-    <ImageButton
         android:id="@+id/imageToTextTab"
-        android:layout_width="157dp"
-        android:layout_height="83dp"
+        android:layout_width="160dp"
+        android:layout_height="82dp"
         android:background="@drawable/round_btns"
         android:backgroundTint="#E351A1"
         android:contentDescription="General Medicines"
+        android:padding="40px"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.866"
+        app:layout_constraintHorizontal_bias="0.864"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.939"
+        app:layout_constraintVertical_bias="0.942"
         app:srcCompat="@drawable/ic_baseline_camera_alt_24" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout2"
-        android:layout_width="462dp"
-        android:layout_height="245dp"
+        android:layout_width="457dp"
+        android:layout_height="210dp"
         android:background="@drawable/round_nav"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.842"
+        app:layout_constraintHorizontal_bias="0.8"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0">
@@ -142,12 +128,28 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.378" />
 
+        <ImageButton
+            android:id="@+id/logoutImageButton"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/oval_btn"
+            android:backgroundTint="#F6AAA9"
+            android:contentDescription="General Medicines"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.938"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.083"
+            app:srcCompat="@drawable/ic_baseline_power_settings_new_24" />
+
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <ImageButton
         android:id="@+id/addMedicineTab"
         android:layout_width="167dp"
-        android:layout_height="150dp"
+        android:layout_height="120dp"
         android:background="@drawable/round_btns"
         android:backgroundTint="#FF5958"
         android:contentDescription="Add Button"
@@ -158,22 +160,22 @@
         app:layout_constraintHorizontal_bias="0.147"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.461"
+        app:layout_constraintVertical_bias="0.481"
         app:srcCompat="@drawable/ic_baseline_alarm_add_24" />
 
     <ImageView
         android:id="@+id/locationTab"
-        android:layout_width="160dp"
-        android:layout_height="64dp"
+        android:layout_width="166dp"
+        android:layout_height="82dp"
         android:background="@drawable/round_btns"
-        android:backgroundTint="#FFB25A"
+        android:backgroundTint="#9F816B"
         android:padding="40px"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.882"
+        app:layout_constraintHorizontal_bias="0.146"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.659"
+        app:layout_constraintVertical_bias="0.942"
         app:srcCompat="@drawable/ic_baseline_location_on_24" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
