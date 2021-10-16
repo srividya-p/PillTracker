@@ -8,6 +8,21 @@
     android:backgroundTint="#473F98"
     tools:context=".DashboardActivity">
 
+    <ImageView
+        android:id="@+id/apiTab"
+        android:layout_width="160dp"
+        android:layout_height="60dp"
+        android:background="@drawable/round_btns"
+        android:backgroundTint="#FFB25A"
+        android:padding="40px"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.884"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.789"
+        app:srcCompat="@drawable/ic_baseline_screen_search_desktop_24" />
+
     <ImageButton
         android:id="@+id/viewMedicinesTab"
         android:layout_width="160dp"
@@ -23,8 +38,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.461"
-        app:srcCompat="@drawable/ic_baseline_manage_search_24"
-        tools:srcCompat="@drawable/ic_baseline_manage_search_24" />
+        app:srcCompat="@drawable/ic_baseline_person_search_24"
+        tools:srcCompat="@drawable/ic_baseline_person_search_24" />
 
     <ImageButton
         android:id="@+id/viewStatsTab"
@@ -148,17 +163,17 @@
 
     <ImageView
         android:id="@+id/locationTab"
-        android:layout_width="161dp"
-        android:layout_height="150dp"
+        android:layout_width="160dp"
+        android:layout_height="64dp"
         android:background="@drawable/round_btns"
         android:backgroundTint="#FFB25A"
         android:padding="40px"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.868"
+        app:layout_constraintHorizontal_bias="0.882"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.757"
+        app:layout_constraintVertical_bias="0.659"
         app:srcCompat="@drawable/ic_baseline_location_on_24" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

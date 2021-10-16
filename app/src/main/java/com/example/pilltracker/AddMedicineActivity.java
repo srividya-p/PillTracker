@@ -32,10 +32,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Date;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
-import java.util.Map;
 import java.util.stream.Collectors;
 
 public class AddMedicineActivity extends AppCompatActivity {
@@ -346,7 +344,7 @@ public class AddMedicineActivity extends AppCompatActivity {
             intent = new Intent(getApplicationContext(), NotificationReceiver.class);
             intent.putExtra("caller", "showNotif");
             intent.putExtra("title", "Expiry Reminder - "+mName);
-            intent.putExtra("content", "Hey " + username+ "!" +mName + "expires today! Remember to restock.");
+            intent.putExtra("content", "Hey " + username+ "! " +mName + " expires today! Remember to restock.");
         }
 
         final int id = (int) System.currentTimeMillis();
