@@ -8,72 +8,6 @@
     android:backgroundTint="#473F98"
     tools:context=".DashboardActivity">
 
-    <ImageView
-        android:id="@+id/apiTab"
-        android:layout_width="160dp"
-        android:layout_height="110dp"
-        android:background="@drawable/round_btns"
-        android:backgroundTint="#FFB25A"
-        android:padding="40px"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.864"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.742"
-        app:srcCompat="@drawable/ic_baseline_screen_search_desktop_24" />
-
-    <ImageButton
-        android:id="@+id/viewMedicinesTab"
-        android:layout_width="160dp"
-        android:layout_height="120dp"
-        android:background="@drawable/round_btns"
-        android:backgroundTint="#4CD97A"
-        android:contentDescription="View Statistics"
-        android:padding="40px"
-        android:scaleType="fitCenter"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.864"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.481"
-        app:srcCompat="@drawable/ic_baseline_person_search_24"
-        tools:srcCompat="@drawable/ic_baseline_person_search_24" />
-
-    <ImageButton
-        android:id="@+id/viewStatsTab"
-        android:layout_width="167dp"
-        android:layout_height="110dp"
-        android:background="@drawable/round_btns"
-        android:backgroundTint="#4DB5FF"
-        android:contentDescription="Prescribed medicines"
-        android:padding="40px"
-        android:scaleType="fitCenter"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.143"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.741"
-        app:srcCompat="@drawable/ic_baseline_stacked_bar_chart_24"
-        tools:srcCompat="@drawable/ic_baseline_stacked_bar_chart_24" />
-
-    <ImageButton
-        android:id="@+id/imageToTextTab"
-        android:layout_width="160dp"
-        android:layout_height="82dp"
-        android:background="@drawable/round_btns"
-        android:backgroundTint="#E351A1"
-        android:contentDescription="General Medicines"
-        android:padding="40px"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.864"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.942"
-        app:srcCompat="@drawable/ic_baseline_camera_alt_24" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout2"
@@ -143,40 +77,154 @@
             app:layout_constraintVertical_bias="0.083"
             app:srcCompat="@drawable/ic_baseline_power_settings_new_24" />
 
-
     </androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/constraintLayout2"
+        app:layout_constraintBottom_toBottomOf="parent">
 
-    <ImageButton
-        android:id="@+id/addMedicineTab"
-        android:layout_width="167dp"
-        android:layout_height="120dp"
-        android:background="@drawable/round_btns"
-        android:backgroundTint="#FF5958"
-        android:contentDescription="Add Button"
-        android:padding="50px"
-        android:scaleType="fitCenter"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.147"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.481"
-        app:srcCompat="@drawable/ic_baseline_alarm_add_24" />
+        <LinearLayout
+            android:id="@+id/layout_addMedicine"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="35dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="2dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/constraintLayout3">
 
-    <ImageView
-        android:id="@+id/locationTab"
-        android:layout_width="166dp"
-        android:layout_height="82dp"
-        android:background="@drawable/round_btns"
-        android:backgroundTint="#9F816B"
-        android:padding="40px"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.146"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.942"
-        app:srcCompat="@drawable/ic_baseline_location_on_24" />
+            <ImageButton
+                android:id="@+id/addMedicineTab"
+                android:layout_width="160dp"
+                android:layout_height="120dp"
+                android:background="@drawable/round_btns"
+                android:backgroundTint="#FF5958"
+                android:contentDescription="Add Button"
+                android:padding="40px"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/ic_baseline_alarm_add_24" />
 
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/layout_apiTab"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="35dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="2dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/layout_viewMedicine">
+
+            <ImageView
+                android:id="@+id/apiTab"
+                android:layout_width="160dp"
+                android:layout_height="120dp"
+                android:background="@drawable/round_btns"
+                android:backgroundTint="#FFB25A"
+                android:padding="40px"
+                app:srcCompat="@drawable/ic_baseline_screen_search_desktop_24" />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/layout_viewStats"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="35dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="2dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/layout_addMedicine">
+
+            <ImageButton
+                android:id="@+id/viewStatsTab"
+                android:layout_width="160dp"
+                android:layout_height="120dp"
+                android:background="@drawable/round_btns"
+                android:backgroundTint="#4DB5FF"
+                android:contentDescription="Prescribed medicines"
+                android:padding="40px"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/ic_baseline_stacked_bar_chart_24"
+                tools:srcCompat="@drawable/ic_baseline_stacked_bar_chart_24" />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/layout_viewMedicine"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="35dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="2dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/constraintLayout3">
+
+            <ImageButton
+                android:id="@+id/viewMedicinesTab"
+                android:layout_width="160dp"
+                android:layout_height="120dp"
+                android:background="@drawable/round_btns"
+                android:backgroundTint="#4CD97A"
+                android:contentDescription="View Statistics"
+                android:padding="40px"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/ic_baseline_person_search_24"
+                tools:srcCompat="@drawable/ic_baseline_person_search_24" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layout_location"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="35dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="2dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/layout_viewStats">
+
+            <ImageView
+                android:id="@+id/locationTab"
+                android:layout_width="160dp"
+                android:layout_height="75dp"
+                android:background="@drawable/round_btns"
+                android:backgroundTint="#9F816B"
+                android:padding="40px"
+                app:srcCompat="@drawable/ic_baseline_location_on_24" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layout_imagetoText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="35dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="2dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/layout_apiTab">
+
+            <ImageButton
+                android:id="@+id/imageToTextTab"
+                android:layout_width="160dp"
+                android:layout_height="75dp"
+                android:background="@drawable/round_btns"
+                android:backgroundTint="#E351A1"
+                android:contentDescription="General Medicines"
+                android:padding="40px"
+                app:srcCompat="@drawable/ic_baseline_camera_alt_24" />
+
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
 
