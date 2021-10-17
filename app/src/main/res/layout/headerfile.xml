@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="210dp"
+    android:layout_height="230dp"
     android:background="#473F98"
     android:orientation="vertical"
     android:gravity="left"
@@ -9,11 +9,12 @@
 
     <ImageView
         android:id="@+id/profilePic"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
         android:background="@drawable/oval_btn"
+        android:layout_marginTop="40dp"
         android:backgroundTint="#ECE4E4"
-        android:src="@mipmap/ic_launcher_foreground"/>
+        android:src="@mipmap/ic_launcher_foreground" />
 
     <TextView
         android:id="@+id/username"

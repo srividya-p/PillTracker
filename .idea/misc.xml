@@ -3,9 +3,14 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/drawable/circular_bordershape.xml" value="0.21354166666666666" />
+        <entry key="app/src/main/res/drawable/oval_btn.xml" value="0.21354166666666666" />
+        <entry key="app/src/main/res/drawable/round_btns.xml" value="0.21354166666666666" />
+        <entry key="app/src/main/res/drawable/round_nav.xml" value="0.21354166666666666" />
+        <entry key="app/src/main/res/drawable/side_nav_bar.xml" value="0.21354166666666666" />
         <entry key="app/src/main/res/layout/activity_add_medicine.xml" value="0.33" />
         <entry key="app/src/main/res/layout/activity_apisearch.xml" value="0.35833333333333334" />
-        <entry key="app/src/main/res/layout/activity_dashboard.xml" value="0.5" />
+        <entry key="app/src/main/res/layout/activity_dashboard.xml" value="0.39479166666666665" />
         <entry key="app/src/main/res/layout/activity_display_medicines.xml" value="0.33" />
         <entry key="app/src/main/res/layout/activity_dosage_list_element.xml" value="0.35833333333333334" />
         <entry key="app/src/main/res/layout/activity_forgot_password.xml" value="0.35833333333333334" />
@@ -14,6 +19,11 @@
         <entry key="app/src/main/res/layout/activity_medicine_added.xml" value="0.35833333333333334" />
         <entry key="app/src/main/res/layout/activity_medicine_search.xml" value="0.35833333333333334" />
         <entry key="app/src/main/res/layout/activity_stats.xml" value="0.34444444444444444" />
+        <entry key="app/src/main/res/layout/headerfile.xml" value="0.35833333333333334" />
+        <entry key="app/src/main/res/layout/toolbar.xml" value="0.35833333333333334" />
+        <entry key="app/src/main/res/menu/activity_main_drawer.xml" value="0.5" />
+        <entry key="app/src/main/res/menu/dashboard.xml" value="0.2" />
+        <entry key="app/src/main/res/menu/side_menu.xml" value="0.2" />
       </map>
     </option>
   </component>

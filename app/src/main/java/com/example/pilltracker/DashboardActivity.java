@@ -6,6 +6,12 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapShader;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.Shader;
+import android.graphics.drawable.Drawable;
 import android.location.LocationManager;
 import android.net.Uri;
 import android.os.Bundle;
@@ -17,6 +23,8 @@ import android.widget.TextView;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.squareup.picasso.Picasso;
+import com.squareup.picasso.Transformation;
 
 public class DashboardActivity extends AppCompatActivity {
 
@@ -24,8 +32,8 @@ public class DashboardActivity extends AppCompatActivity {
     String latitude, longitude;
 
     private ImageButton logoutButton;
-    private ImageView locationTab, addMedicineTab, viewMedicinesTab, viewStatsTab, imageToTextTab, apiTab;
-    private TextView userGreet;
+    private ImageView locationTab, addMedicineTab, viewMedicinesTab, viewStatsTab, imageToTextTab, apiTab, profilePic;
+    private TextView userGreet, userName, userEmail;
 
     private FirebaseUser currentUser;
     private LocationManager locationManager;
@@ -51,6 +59,12 @@ public class DashboardActivity extends AppCompatActivity {
         apiTab = findViewById(R.id.apiTab);
         userGreet = findViewById(R.id.userGreet);
 
+        NavigationView navigationView = (NavigationView) findViewById(R.id.navigationview);
+        View headerView = navigationView.getHeaderView(0);
+        userName = headerView.findViewById(R.id.username);
+        profilePic = headerView.findViewById(R.id.profilePic);
+        userEmail = headerView.findViewById(R.id.usermailid);
+
         setSupportActionBar(toolbar);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this,drawerLayout,toolbar,R.string.navigation_open,R.string.navigation_close);
         drawerLayout.addDrawerListener(toggle);
@@ -59,16 +73,16 @@ public class DashboardActivity extends AppCompatActivity {
         currentUser = FirebaseAuth.getInstance().getCurrentUser();
 
         if(currentUser != null) {
-//          Log.d("WHAT?", currentUser.getDisplayName());
             String name = currentUser.getDisplayName();
             String email = currentUser.getEmail();
             Uri photoUrl = currentUser.getPhotoUrl();
 
             userGreet.setText(name);
-        }
+            userName.setText(name);
+            userEmail.setText(email);
 
-        //String url = "https://www.pinclipart.com/picdir/middle/182-1821638_logout-icon-png-red-clipart.png";
-        //Picasso.get().load(url).into(logoutButton);
+            Picasso.get().load(photoUrl).transform(new CircleTransform()).into(profilePic);
+        }
 
         logoutButton.setOnClickListener(new View.OnClickListener() {
         @Override
@@ -128,5 +142,40 @@ public class DashboardActivity extends AppCompatActivity {
                 startActivity(apiIntent);
             }
         });
+    }
+}
+
+class CircleTransform implements Transformation {
+    @Override
+    public Bitmap transform(Bitmap source) {
+        int size = Math.min(source.getWidth(), source.getHeight());
+
+        int x = (source.getWidth() - size) / 2;
+        int y = (source.getHeight() - size) / 2;
+
+        Bitmap squaredBitmap = Bitmap.createBitmap(source, x, y, size, size);
+        if (squaredBitmap != source) {
+            source.recycle();
+        }
+
+        Bitmap bitmap = Bitmap.createBitmap(size, size, source.getConfig());
+
+        Canvas canvas = new Canvas(bitmap);
+        Paint paint = new Paint();
+        BitmapShader shader = new BitmapShader(squaredBitmap,
+                Shader.TileMode.CLAMP, Shader.TileMode.CLAMP);
+        paint.setShader(shader);
+        paint.setAntiAlias(true);
+
+        float r = size / 2f;
+        canvas.drawCircle(r, r, r, paint);
+
+        squaredBitmap.recycle();
+        return bitmap;
+    }
+
+    @Override
+    public String key() {
+        return "circle";
     }
 }

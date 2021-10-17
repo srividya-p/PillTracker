@@ -47,6 +47,8 @@ public class APISearchActivity extends AppCompatActivity {
     String product_type;
     String generic_name;
 
+    Boolean internet_flag = false;
+
     boolean flag = false;
     private static final String BASE_URI = "https://api.fda.gov/drug/label.json?search=openfda.generic_name:";
 
@@ -92,6 +94,7 @@ public class APISearchActivity extends AppCompatActivity {
 
     private void refresh() {
         infoCard.setVisibility(View.GONE);
+        progressBar.setVisibility(View.GONE);
         medSearchBar.setQuery("", false);
     }
 
@@ -138,17 +141,22 @@ public class APISearchActivity extends AppCompatActivity {
             }
             catch(Exception e) {
                 Log.e("ERROR", e.getMessage(), e);
+                internet_flag=true;
                 return null;
             }
         }
 
         protected void onPostExecute(String response) {
+            progressBar.setVisibility(View.GONE);
+            if(internet_flag){
+                Toast.makeText(APISearchActivity.this.getApplicationContext(), "There is no internet connection! Please switch on WiFi/Data and try again!", Toast.LENGTH_SHORT).show();
+                return;
+            }
             if(response == null) {
-                Toast.makeText(APISearchActivity.this.getApplicationContext(), "There was an error! Please Try again later.", Toast.LENGTH_SHORT).show();
+                Toast.makeText(APISearchActivity.this.getApplicationContext(), "The drug was not found! Please try another keyword.", Toast.LENGTH_SHORT).show();
                 return;
             }
 
-            progressBar.setVisibility(View.GONE);
             parseJSONData(response);
         }
     }
