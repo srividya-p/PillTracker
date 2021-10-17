@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="210dp"
+    android:background="#473F98"
+    android:orientation="vertical"
+    android:gravity="left"
+    android:padding="20dp">
+
+    <ImageView
+        android:id="@+id/profilePic"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="@drawable/oval_btn"
+        android:backgroundTint="#ECE4E4"
+        android:src="@mipmap/ic_launcher_foreground"/>
+
+    <TextView
+        android:id="@+id/username"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_bold"
+        android:layout_marginTop="10dp"
+        android:text="Srividya"
+        android:textColor="#ECE4E4"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/usermailid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:fontFamily="@font/poppins_medium"
+        android:text="xyz@gmail.com"
+        android:textColor="#ECE4E4"
+        android:textSize="15sp" />
+
+</LinearLayout>

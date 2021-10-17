@@ -1,6 +1,9 @@
 package com.example.pilltracker;
 
+import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.content.Intent;
 import android.location.LocationManager;
@@ -11,6 +14,7 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
@@ -26,11 +30,18 @@ public class DashboardActivity extends AppCompatActivity {
     private FirebaseUser currentUser;
     private LocationManager locationManager;
 
+    DrawerLayout drawerLayout;
+    NavigationView navigationView;
+    Toolbar toolbar;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard);
 
+        drawerLayout = findViewById(R.id.drawerlayout);
+        navigationView = findViewById(R.id.navigationview);
+        toolbar = findViewById(R.id.toolbar);
         logoutButton = findViewById(R.id.logoutImageButton);
         locationTab = findViewById(R.id.locationTab);
         addMedicineTab = findViewById(R.id.addMedicineTab);
@@ -39,6 +50,11 @@ public class DashboardActivity extends AppCompatActivity {
         imageToTextTab = findViewById(R.id.imageToTextTab);
         apiTab = findViewById(R.id.apiTab);
         userGreet = findViewById(R.id.userGreet);
+
+        setSupportActionBar(toolbar);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this,drawerLayout,toolbar,R.string.navigation_open,R.string.navigation_close);
+        drawerLayout.addDrawerListener(toggle);
+        toggle.syncState();
 
         currentUser = FirebaseAuth.getInstance().getCurrentUser();
 
