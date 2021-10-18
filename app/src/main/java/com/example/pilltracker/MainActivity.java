@@ -4,10 +4,19 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.AlarmManager;
 import android.app.PendingIntent;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
+import android.view.animation.AccelerateInterpolator;
+import android.view.animation.AlphaAnimation;
+import android.view.animation.Animation;
+import android.view.animation.AnimationSet;
+import android.view.animation.LinearInterpolator;
+import android.view.animation.RotateAnimation;
 import android.widget.Button;
+import android.widget.ImageView;
 
 import com.google.firebase.auth.FirebaseAuth;
 
@@ -15,6 +24,62 @@ import java.util.Calendar;
 import java.util.Date;
 
 public class MainActivity extends AppCompatActivity implements Button.OnClickListener{
+
+    ImageView mrPill;
+
+    Animation fadeIn;
+    Animation fadeOut;
+    int fadeOutTime=6000;
+    int timeBetween=2000;
+    int images[]={R.mipmap.alarm_clock_foreground,R.mipmap.search_foreground,R.mipmap.ic_launcher_foreground};
+    static  int index=0;
+    private AnimationSet animation;
+    private Handler mHandler;
+
+    private Runnable mCountUpdater = new Runnable() {
+        private int mCount = 0;
+        @Override
+        public void run() {
+            if(mCount>2)
+                return;
+            else
+            {
+                func();
+                mCount++;
+                mHandler.postDelayed(this, 3000);
+            }
+        }
+    };
+
+    public void func()
+    {
+        if(index<=2)
+        {
+            mrPill=(ImageView)findViewById(R.id.mrPill);
+
+            mrPill.setImageResource(images[index]);
+
+            fadeIn = new AlphaAnimation(0.00f, 1);
+            fadeIn.setInterpolator(new LinearInterpolator());
+            fadeIn.setDuration(1000);
+
+            fadeOut = new AlphaAnimation(1, 0f);
+            fadeOut.setInterpolator(new AccelerateInterpolator());
+            fadeOut.setStartOffset(timeBetween);
+            fadeOut.setDuration(fadeOutTime);
+
+            animation = new AnimationSet(false);
+            animation.addAnimation(fadeIn);
+            if(index != 2){
+                animation.addAnimation(fadeOut);
+            }
+            animation.setRepeatCount(1);
+            animation.setFillAfter(true);
+            mrPill.setAnimation(animation);
+            index=index+1;
+        }
+
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,7 +89,10 @@ public class MainActivity extends AppCompatActivity implements Button.OnClickLis
         Button loginPageButton = findViewById(R.id.openLoginPageButton);
         loginPageButton.setOnClickListener(this::onClick);
 
-//        myAlarm();
+        mrPill = findViewById(R.id.mrPill);
+
+        mHandler = new Handler();
+        mHandler.post(mCountUpdater);
     }
 
     @Override
@@ -33,31 +101,4 @@ public class MainActivity extends AppCompatActivity implements Button.OnClickLis
         startActivity(open_login_page);
     }
 
-//    public void myAlarm() {
-//
-//        Calendar calendar = Calendar.getInstance();
-//        calendar.set(Calendar.MONTH, 9);
-//        calendar.set(Calendar.DAY_OF_MONTH, 6);
-//        calendar.set(Calendar.YEAR, 2021);
-//        calendar.set(Calendar.HOUR_OF_DAY, 12);
-//        calendar.set(Calendar.MINUTE, 53);
-//        calendar.set(Calendar.SECOND, 0);
-//
-//        if (calendar.getTime().compareTo(new Date()) < 0)
-//            calendar.add(Calendar.DAY_OF_MONTH, 1);
-//
-//        Intent intent = new Intent(getApplicationContext(), NotificationReceiver.class);
-//        PendingIntent pendingIntent = PendingIntent.getBroadcast(getApplicationContext(), 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
-//        AlarmManager alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
-//
-//        if (alarmManager != null) {
-//            alarmManager.set(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), pendingIntent);
-//            System.out.println("Alarm set!");
-//        }
-//
-//    }
-
-
-    //https://developer.android.com/training/notify-user/build-notification
-    //https://stackoverflow.com/questions/33055129/how-to-show-a-notification-everyday-at-a-certain-time-even-when-the-app-is-close
 }

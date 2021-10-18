@@ -16,6 +16,7 @@
         <entry key="app/src/main/res/layout/activity_forgot_password.xml" value="0.35833333333333334" />
         <entry key="app/src/main/res/layout/activity_image_to_text.xml" value="0.35833333333333334" />
         <entry key="app/src/main/res/layout/activity_image_to_text_live_stream.xml" value="0.2" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.35833333333333334" />
         <entry key="app/src/main/res/layout/activity_medicine_added.xml" value="0.35833333333333334" />
         <entry key="app/src/main/res/layout/activity_medicine_search.xml" value="0.35833333333333334" />
         <entry key="app/src/main/res/layout/activity_stats.xml" value="0.34444444444444444" />
@@ -24,6 +25,8 @@
         <entry key="app/src/main/res/menu/activity_main_drawer.xml" value="0.5" />
         <entry key="app/src/main/res/menu/dashboard.xml" value="0.2" />
         <entry key="app/src/main/res/menu/side_menu.xml" value="0.2" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.37447916666666664" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.37447916666666664" />
       </map>
     </option>
   </component>
