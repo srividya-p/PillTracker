@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.google.android.material.button.MaterialButton;
@@ -50,8 +51,11 @@ public class ViewDosageElementAdapter extends ArrayAdapter<String> {
         } else if(statuses.get(position).equals("Generic")) {
             status.setTextColor(Color.parseColor("#0000FF"));
             addAgain.setVisibility(View.GONE);
-        } else {
+        } else if(statuses.get(position).equals("Completed")){
             status.setTextColor(Color.parseColor("#006600"));
+        } else{
+            status.setVisibility(View.GONE);
+            addAgain.setVisibility(View.GONE);
         }
 
         addAgain.setOnClickListener(new View.OnClickListener() {

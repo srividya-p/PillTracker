@@ -49,7 +49,9 @@ public class DisplayMedicineActivity extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<QuerySnapshot> task) {
                 if(task.isSuccessful()){
+                    int count=0;
                     for(QueryDocumentSnapshot document : task.getResult()){
+                        count++;
                         names.add((String) document.get("name"));
                         descriptions.add((String) document.get("desc"));
 
@@ -67,6 +69,12 @@ public class DisplayMedicineActivity extends AppCompatActivity {
                                 statuses.add("Completed");
                             }
                         }
+                    }
+
+                    if(count == 0){
+                        names.add("No Dosages to show!");
+                        descriptions.add("Add a dosage to view it's status");
+                        statuses.add("");
                     }
 
                     ViewDosageElementAdapter adapter = new ViewDosageElementAdapter(DisplayMedicineActivity.this, names, descriptions, statuses);

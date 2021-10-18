@@ -9,15 +9,6 @@
     android:fitsSystemWindows="true"
     tools:openDrawer="start">
 
-    <com.google.android.material.navigation.NavigationView
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:id="@+id/navigationview"
-        app:headerLayout="@layout/headerfile"
-        app:menu="@menu/side_menu"
-        android:layout_gravity="start"/>
-
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -33,7 +24,7 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/constraintLayout2"
                 android:layout_width="457dp"
-                android:layout_height="210dp"
+                android:layout_height="180dp"
                 android:background="@drawable/round_nav"
                 app:layout_constraintTop_toBottomOf="@id/toolbar"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -66,7 +57,8 @@
                     app:layout_constraintHorizontal_bias="0.628"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.627" />
+                    app:layout_constraintVertical_bias="0.627"
+                    android:layout_marginTop="40dp"/>
 
                 <TextView
                     android:id="@+id/userGreet2"
@@ -82,21 +74,6 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintVertical_bias="0.378" />
-
-                <ImageButton
-                    android:id="@+id/logoutImageButton"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:background="@drawable/oval_btn"
-                    android:backgroundTint="#F6AAA9"
-                    android:contentDescription="General Medicines"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.938"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.083"
-                    app:srcCompat="@drawable/ic_baseline_power_settings_new_24" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -120,13 +97,14 @@
 
                     <ImageButton
                         android:id="@+id/addMedicineTab"
-                        android:layout_width="160dp"
-                        android:layout_height="120dp"
+                        android:layout_width="140dp"
+                        android:layout_height="140dp"
                         android:background="@drawable/round_btns"
                         android:backgroundTint="#FF5958"
                         android:contentDescription="Add Button"
-                        android:padding="40px"
+                        android:padding="60px"
                         android:scaleType="fitCenter"
+                        android:layout_marginTop="15dp"
                         app:srcCompat="@drawable/ic_baseline_alarm_add_24" />
 
                 </LinearLayout>
@@ -144,11 +122,11 @@
 
                     <ImageView
                         android:id="@+id/apiTab"
-                        android:layout_width="160dp"
-                        android:layout_height="120dp"
+                        android:layout_width="140dp"
+                        android:layout_height="140dp"
                         android:background="@drawable/round_btns"
-                        android:backgroundTint="#FFB25A"
-                        android:padding="40px"
+                        android:backgroundTint="#FBBF7A"
+                        android:padding="60px"
                         app:srcCompat="@drawable/ic_baseline_screen_search_desktop_24" />
                 </LinearLayout>
                 <LinearLayout
@@ -165,12 +143,12 @@
 
                     <ImageButton
                         android:id="@+id/viewStatsTab"
-                        android:layout_width="160dp"
-                        android:layout_height="120dp"
+                        android:layout_width="140dp"
+                        android:layout_height="140dp"
                         android:background="@drawable/round_btns"
                         android:backgroundTint="#4DB5FF"
                         android:contentDescription="Prescribed medicines"
-                        android:padding="40px"
+                        android:padding="60px"
                         android:scaleType="fitCenter"
                         app:srcCompat="@drawable/ic_baseline_stacked_bar_chart_24"
                         tools:srcCompat="@drawable/ic_baseline_stacked_bar_chart_24" />
@@ -189,13 +167,14 @@
 
                     <ImageButton
                         android:id="@+id/viewMedicinesTab"
-                        android:layout_width="160dp"
-                        android:layout_height="120dp"
+                        android:layout_width="140dp"
+                        android:layout_height="140dp"
                         android:background="@drawable/round_btns"
                         android:backgroundTint="#4CD97A"
                         android:contentDescription="View Statistics"
-                        android:padding="40px"
+                        android:padding="60px"
                         android:scaleType="fitCenter"
+                        android:layout_marginTop="15dp"
                         app:srcCompat="@drawable/ic_baseline_person_search_24"
                         tools:srcCompat="@drawable/ic_baseline_person_search_24" />
                 </LinearLayout>
@@ -214,11 +193,12 @@
 
                     <ImageView
                         android:id="@+id/locationTab"
-                        android:layout_width="160dp"
-                        android:layout_height="75dp"
+                        android:layout_width="140dp"
+                        android:layout_height="140dp"
                         android:background="@drawable/round_btns"
-                        android:backgroundTint="#9F816B"
-                        android:padding="40px"
+                        android:backgroundTint="#F37B56"
+                        android:padding="60px"
+                        android:scaleType="fitCenter"
                         app:srcCompat="@drawable/ic_baseline_location_on_24" />
 
                 </LinearLayout>
@@ -237,17 +217,27 @@
 
                     <ImageButton
                         android:id="@+id/imageToTextTab"
-                        android:layout_width="160dp"
-                        android:layout_height="75dp"
+                        android:layout_width="140dp"
+                        android:layout_height="140dp"
                         android:background="@drawable/round_btns"
                         android:backgroundTint="#E351A1"
-                        android:contentDescription="General Medicines"
-                        android:padding="40px"
+                        android:padding="80px"
+                        android:scaleType="fitCenter"
                         app:srcCompat="@drawable/ic_baseline_camera_alt_24" />
 
                 </LinearLayout>
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
+
+    <com.google.android.material.navigation.NavigationView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:id="@+id/navigationview"
+        app:headerLayout="@layout/headerfile"
+        app:menu="@menu/side_menu"
+        android:layout_gravity="start"
+        android:visibility="visible"/>
 </androidx.drawerlayout.widget.DrawerLayout>
 

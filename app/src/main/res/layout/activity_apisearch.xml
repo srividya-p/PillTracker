@@ -319,5 +319,17 @@
 
     </com.google.android.material.card.MaterialCardView>
 
+    <TextView
+        android:id="@+id/emptyText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:fontFamily="@font/poppins_medium"
+        android:text="Enter a Medicine Name to fetch it's details \nfrom the openFDA API"
+        android:textAlignment="center"
+        android:textAppearance="?attr/textAppearanceBody2"
+        android:textColor="#C8D6CE"
+        android:textSize="14sp"
+        android:textStyle="normal" />
 
 </LinearLayout>

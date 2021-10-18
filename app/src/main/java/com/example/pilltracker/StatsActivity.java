@@ -4,10 +4,13 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.graphics.Color;
+import android.graphics.Paint;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.util.Log;
 
 import com.github.mikephil.charting.charts.BarChart;
+import com.github.mikephil.charting.charts.Chart;
 import com.github.mikephil.charting.charts.PieChart;
 import com.github.mikephil.charting.components.AxisBase;
 import com.github.mikephil.charting.components.Description;
@@ -41,8 +44,6 @@ public class StatsActivity extends AppCompatActivity {
     private FirebaseUser currentUser;
 
     private static int MAX_X_VALUE = 0;
-    private static final int MAX_Y_VALUE = 50;
-    private static final int MIN_Y_VALUE = 5;
 
     private static final String STACK_1_LABEL = "Doses Completed";
     private static final String STACK_2_LABEL = "Doses Pending";
@@ -86,10 +87,17 @@ public class StatsActivity extends AppCompatActivity {
 
                     MAX_X_VALUE = count;
 
-                    BarData data = createChartData(dosesTaken, totalDosages);
-                    configureChartAppearance(xLabel);
-                    prepareChartData(data);
-
+                    if(count==0){
+                        barChart.setNoDataText("Add Dosages to see statistics.");
+                        Paint p = barChart.getPaint(Chart.PAINT_INFO);
+                        p.setColor(Color.BLACK);
+                        p.setTextSize(50f);
+                        barChart.invalidate();
+                    } else {
+                        BarData data = createChartData(dosesTaken, totalDosages);
+                        configureChartAppearance(xLabel);
+                        prepareChartData(data);
+                    }
                 } else {
                     Log.d(TAG, "Error getting documents: ", task.getException());
                 }

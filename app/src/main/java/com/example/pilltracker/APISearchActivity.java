@@ -27,7 +27,7 @@ public class APISearchActivity extends AppCompatActivity {
 
     ImageButton medSearchButton, medClearButton;
     SearchView medSearchBar;
-    TextView mName, mPurpose, mDrugType, mRoute, mSubstanceName, mIndication, mDosage, mWhenUsing, mAskDoctor, mActiveIng, mStorage;
+    TextView mName, mPurpose, mDrugType, mRoute, mSubstanceName, mIndication, mDosage, mWhenUsing, mAskDoctor, mActiveIng, mStorage, emptyText;
     ProgressBar progressBar;
     MaterialCardView infoCard;
 
@@ -74,6 +74,8 @@ public class APISearchActivity extends AppCompatActivity {
         mActiveIng = findViewById(R.id.mActiveIng);
         mStorage = findViewById(R.id.mStorage);
 
+        emptyText = findViewById(R.id.emptyText);
+
         progressBar = findViewById(R.id.progressBar);
 
         medClearButton.setOnClickListener(new View.OnClickListener() {
@@ -93,6 +95,7 @@ public class APISearchActivity extends AppCompatActivity {
     }
 
     private void refresh() {
+        emptyText.setVisibility(View.VISIBLE);
         infoCard.setVisibility(View.GONE);
         progressBar.setVisibility(View.GONE);
         medSearchBar.setQuery("", false);
@@ -116,6 +119,7 @@ public class APISearchActivity extends AppCompatActivity {
 
     class RetrieveDataTask extends AsyncTask<Void, Void, String> {
         protected void onPreExecute() {
+            emptyText.setVisibility(View.GONE);
             progressBar.setVisibility(View.VISIBLE);
             infoCard.setVisibility(View.GONE);
         }
@@ -147,6 +151,7 @@ public class APISearchActivity extends AppCompatActivity {
         }
 
         protected void onPostExecute(String response) {
+            emptyText.setVisibility(View.GONE);
             progressBar.setVisibility(View.GONE);
             if(internet_flag){
                 Toast.makeText(APISearchActivity.this.getApplicationContext(), "There is no internet connection! Please switch on WiFi/Data and try again!", Toast.LENGTH_SHORT).show();

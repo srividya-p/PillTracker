@@ -1,8 +1,10 @@
 package com.example.pilltracker;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.content.Intent;
@@ -15,6 +17,7 @@ import android.graphics.drawable.Drawable;
 import android.location.LocationManager;
 import android.net.Uri;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -28,19 +31,16 @@ import com.squareup.picasso.Transformation;
 
 public class DashboardActivity extends AppCompatActivity {
 
-    private static final int REQUEST_LOCATION = 1;
-    String latitude, longitude;
-
-    private ImageButton logoutButton;
     private ImageView locationTab, addMedicineTab, viewMedicinesTab, viewStatsTab, imageToTextTab, apiTab, profilePic;
     private TextView userGreet, userName, userEmail;
 
     private FirebaseUser currentUser;
     private LocationManager locationManager;
 
-    DrawerLayout drawerLayout;
-    NavigationView navigationView;
-    Toolbar toolbar;
+    private DrawerLayout drawerLayout;
+    private NavigationView navigationView;
+    private View headerView;
+    private Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,7 +50,6 @@ public class DashboardActivity extends AppCompatActivity {
         drawerLayout = findViewById(R.id.drawerlayout);
         navigationView = findViewById(R.id.navigationview);
         toolbar = findViewById(R.id.toolbar);
-        logoutButton = findViewById(R.id.logoutImageButton);
         locationTab = findViewById(R.id.locationTab);
         addMedicineTab = findViewById(R.id.addMedicineTab);
         viewMedicinesTab = findViewById(R.id.viewMedicinesTab);
@@ -59,16 +58,31 @@ public class DashboardActivity extends AppCompatActivity {
         apiTab = findViewById(R.id.apiTab);
         userGreet = findViewById(R.id.userGreet);
 
-        NavigationView navigationView = (NavigationView) findViewById(R.id.navigationview);
-        View headerView = navigationView.getHeaderView(0);
+        navigationView = (NavigationView) findViewById(R.id.navigationview);
+        headerView = navigationView.getHeaderView(0);
         userName = headerView.findViewById(R.id.username);
         profilePic = headerView.findViewById(R.id.profilePic);
         userEmail = headerView.findViewById(R.id.usermailid);
+
 
         setSupportActionBar(toolbar);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this,drawerLayout,toolbar,R.string.navigation_open,R.string.navigation_close);
         drawerLayout.addDrawerListener(toggle);
         toggle.syncState();
+
+        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                int navItemId = item.getItemId();
+                if(navItemId == R.id.logout){
+                    FirebaseAuth.getInstance().signOut();
+                    DashboardActivity.this.startActivity(new Intent(DashboardActivity.this, LoginActivity.class));
+                    DashboardActivity.this.finish();
+                }
+                drawerLayout.closeDrawer(GravityCompat.START);
+                return true;
+            }
+        });
 
         currentUser = FirebaseAuth.getInstance().getCurrentUser();
 
@@ -83,15 +97,6 @@ public class DashboardActivity extends AppCompatActivity {
 
             Picasso.get().load(photoUrl).transform(new CircleTransform()).into(profilePic);
         }
-
-        logoutButton.setOnClickListener(new View.OnClickListener() {
-        @Override
-        public void onClick(View view) {
-            FirebaseAuth.getInstance().signOut();
-            DashboardActivity.this.startActivity(new Intent(DashboardActivity.this, LoginActivity.class));
-            DashboardActivity.this.finish();
-        }
-        });
 
         locationTab.setOnClickListener(new View.OnClickListener() {
             @Override
