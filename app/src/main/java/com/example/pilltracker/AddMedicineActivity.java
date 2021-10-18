@@ -19,6 +19,7 @@ import android.widget.Toast;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.textfield.TextInputEditText;
+import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
@@ -43,6 +44,8 @@ public class AddMedicineActivity extends AppCompatActivity {
     TextView selectLabel;
     Button addButton;
 
+    TextInputLayout exp, st, en;
+
     Calendar calendar = Calendar.getInstance();
 
     String currentDateField = "";
@@ -65,6 +68,10 @@ public class AddMedicineActivity extends AppCompatActivity {
         mStartDate = findViewById(R.id.mStartDate);
         mEndDate = findViewById(R.id.mEndDate);
         mExpDate = findViewById(R.id.mExpDate);
+
+        exp = findViewById(R.id.filledTextField_Expiry);
+        st = findViewById(R.id.filledTextField_Start);
+        en = findViewById(R.id.filledTextField_End);
 
         Bundle extras = getIntent().getExtras();
         if(extras != null) {
@@ -99,29 +106,29 @@ public class AddMedicineActivity extends AppCompatActivity {
 
         addButton = findViewById(R.id.addButton);
 
-        mExpDate.setVisibility(View.GONE);
+        exp.setVisibility(View.GONE);
 
         isGeneric.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
                 if(isGeneric.isChecked()){
-                    mStartDate.setVisibility(View.GONE);
-                    mEndDate.setVisibility(View.GONE);
+                    st.setVisibility(View.GONE);
+                    en.setVisibility(View.GONE);
                     isBreakfast.setVisibility(View.GONE);
                     isLunch.setVisibility(View.GONE);
                     isEvening.setVisibility(View.GONE);
                     isDinner.setVisibility(View.GONE);
-                    mExpDate.setVisibility(View.VISIBLE);
+                    exp.setVisibility(View.VISIBLE);
                     selectLabel.setVisibility(View.GONE);
                 } else{
-                    mStartDate.setVisibility(View.VISIBLE);
-                    mEndDate.setVisibility(View.VISIBLE);
+                    st.setVisibility(View.VISIBLE);
+                    en.setVisibility(View.VISIBLE);
                     isBreakfast.setVisibility(View.VISIBLE);
                     isLunch.setVisibility(View.VISIBLE);
                     isEvening.setVisibility(View.VISIBLE);
                     isDinner.setVisibility(View.VISIBLE);
-                    mExpDate.setVisibility(View.GONE);
+                    exp.setVisibility(View.GONE);
                 }
             }
         });
