@@ -19,32 +19,31 @@
         app:headerLayout="@layout/headerfile"
         app:menu="@menu/side_menu" />
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/toolbar" />
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#473F98"
         android:backgroundTint="#473F98">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <include
-                android:id="@+id/toolbar"
-                layout="@layout/toolbar" />
-
             <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="#F3F3F6"
                 android:orientation="vertical"
-                app:layout_constraintTop_toBottomOf="@id/toolbar"
                 tools:context=".DisplayMedicineActivity">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/constraintLayout"
                     android:layout_width="478dp"
-                    android:layout_height="150dp"
+                    android:layout_height="190dp"
                     android:layout_marginBottom="10dp"
                     android:background="@drawable/round_nav"
                     android:backgroundTint="#473F98"
@@ -64,10 +63,10 @@
                         android:textSize="35sp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.35"
+                        app:layout_constraintHorizontal_bias="0.45"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintVertical_bias="0.674" />
+                        app:layout_constraintVertical_bias="0.75" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
                 <ScrollView
@@ -256,12 +255,9 @@
                             android:textColor="#FFFFFF"
                             android:textSize="16sp"
                             app:iconTint="#FFFFFF" />
-
-
                     </LinearLayout>
                 </ScrollView>
-
             </LinearLayout>
-        </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.drawerlayout.widget.DrawerLayout>

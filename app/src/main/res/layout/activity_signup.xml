@@ -32,7 +32,7 @@
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="56dp"
+        android:layout_marginTop="76dp"
         android:fontFamily="@font/poppins_bold"
         android:text="Sign Up"
         android:textColor="#F6F3F3"

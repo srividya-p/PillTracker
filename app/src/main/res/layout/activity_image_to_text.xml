@@ -22,8 +22,8 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#473F98"
-        android:backgroundTint="#473F98">
+        android:background="#F3F3F6"
+        android:backgroundTint="#F3F3F6">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -44,7 +44,7 @@
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/constraintLayout"
                     android:layout_width="478dp"
-                    android:layout_height="150dp"
+                    android:layout_height="130dp"
                     android:layout_marginBottom="10dp"
                     android:background="@drawable/round_nav"
                     android:backgroundTint="#473F98"
@@ -71,7 +71,7 @@
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="562dp"
                     tools:context=".ImageToTextActivity">
 
                     <ImageButton
