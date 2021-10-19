@@ -3,6 +3,20 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/FCRIT SEM 7/MAD/MAD pracs/PillTracker/app/src/main/res/drawable/round_btns.xml" value="0.10885416666666667" />
+        <entry key="..\:/FCRIT SEM 7/MAD/MAD pracs/PillTracker/app/src/main/res/drawable/round_nav.xml" value="0.10885416666666667" />
+        <entry key="..\:/FCRIT SEM 7/MAD/MAD pracs/PillTracker/app/src/main/res/drawable/search_im_background.xml" value="0.10885416666666667" />
+        <entry key="..\:/FCRIT SEM 7/MAD/MAD pracs/PillTracker/app/src/main/res/layout/activity_add_medicine.xml" value="0.1" />
+        <entry key="..\:/FCRIT SEM 7/MAD/MAD pracs/PillTracker/app/src/main/res/layout/activity_apisearch.xml" value="0.14" />
+        <entry key="..\:/FCRIT SEM 7/MAD/MAD pracs/PillTracker/app/src/main/res/layout/activity_dashboard.xml" value="0.1" />
+        <entry key="..\:/FCRIT SEM 7/MAD/MAD pracs/PillTracker/app/src/main/res/layout/activity_display_medicines.xml" value="0.1" />
+        <entry key="..\:/FCRIT SEM 7/MAD/MAD pracs/PillTracker/app/src/main/res/layout/activity_dosage_list_element.xml" value="0.18" />
+        <entry key="..\:/FCRIT SEM 7/MAD/MAD pracs/PillTracker/app/src/main/res/layout/activity_image_to_text.xml" value="0.1" />
+        <entry key="..\:/FCRIT SEM 7/MAD/MAD pracs/PillTracker/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/FCRIT SEM 7/MAD/MAD pracs/PillTracker/app/src/main/res/layout/activity_medicine_added.xml" value="0.10960144927536232" />
+        <entry key="..\:/FCRIT SEM 7/MAD/MAD pracs/PillTracker/app/src/main/res/layout/activity_stats.xml" value="0.10960144927536232" />
+        <entry key="..\:/FCRIT SEM 7/MAD/MAD pracs/PillTracker/app/src/main/res/layout/toolbar.xml" value="0.1" />
+        <entry key="..\:/FCRIT SEM 7/MAD/MAD pracs/PillTracker/app/src/main/res/menu/side_menu.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/circular_bordershape.xml" value="0.21354166666666666" />
         <entry key="app/src/main/res/drawable/oval_btn.xml" value="0.21354166666666666" />
         <entry key="app/src/main/res/drawable/round_btns.xml" value="0.21354166666666666" />

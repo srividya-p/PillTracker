@@ -49,7 +49,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
         android:fontFamily="@font/poppins_medium"
-        android:text="Your personalised Medicine Manger"
+        android:text="Your personalised Medicine Manager"
         android:textColor="#ECE4E4"
         android:textStyle="italic"
         app:layout_constraintEnd_toEndOf="parent"

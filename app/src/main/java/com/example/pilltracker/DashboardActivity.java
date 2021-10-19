@@ -22,6 +22,7 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
@@ -29,7 +30,7 @@ import com.google.firebase.auth.FirebaseUser;
 import com.squareup.picasso.Picasso;
 import com.squareup.picasso.Transformation;
 
-public class DashboardActivity extends AppCompatActivity {
+public class DashboardActivity extends AppCompatActivity{
 
     private ImageView locationTab, addMedicineTab, viewMedicinesTab, viewStatsTab, imageToTextTab, apiTab, profilePic;
     private TextView userGreet, userName, userEmail;
@@ -64,20 +65,42 @@ public class DashboardActivity extends AppCompatActivity {
         profilePic = headerView.findViewById(R.id.profilePic);
         userEmail = headerView.findViewById(R.id.usermailid);
 
-
         setSupportActionBar(toolbar);
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this,drawerLayout,toolbar,R.string.navigation_open,R.string.navigation_close);
+        navigationView.bringToFront();
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.navigation_open, R.string.navigation_close);
         drawerLayout.addDrawerListener(toggle);
         toggle.syncState();
+        navigationView.setCheckedItem(R.id.home_menu);
 
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                int navItemId = item.getItemId();
-                if(navItemId == R.id.logout){
-                    FirebaseAuth.getInstance().signOut();
-                    DashboardActivity.this.startActivity(new Intent(DashboardActivity.this, LoginActivity.class));
-                    DashboardActivity.this.finish();
+            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+                switch (menuItem.getItemId()) {
+                    case R.id.logout:
+                        FirebaseAuth.getInstance().signOut();
+                        startActivity(new Intent(DashboardActivity.this, LoginActivity.class));
+                        break;
+                    case R.id.addMedicine:
+                        startActivity(new Intent(DashboardActivity.this,AddMedicineActivity.class));
+                        break;
+                    case R.id.viewMedicine:
+                        startActivity(new Intent(DashboardActivity.this,DisplayMedicineActivity.class));
+                        break;
+                    case R.id.viewStats:
+                        startActivity(new Intent(DashboardActivity.this,StatsActivity.class));
+                        break;
+                    case R.id.searchMedicine:
+                        startActivity(new Intent(DashboardActivity.this, APISearchActivity.class));
+                        break;
+                    case R.id.imagetoText:
+                        startActivity(new Intent(DashboardActivity.this, ImageToTextActivity.class));
+                        break;
+                    case R.id.location:
+                        String url = "http://maps.google.co.uk/maps?q=Pharmacy&hl=en";
+                        Intent locIntent = new Intent(Intent.ACTION_VIEW,Uri.parse(url));
+                        locIntent.setClassName("com.google.android.apps.maps","com.google.android.maps.MapsActivity");
+                        startActivity(locIntent);
+                        break;
                 }
                 drawerLayout.closeDrawer(GravityCompat.START);
                 return true;
@@ -147,6 +170,14 @@ public class DashboardActivity extends AppCompatActivity {
                 startActivity(apiIntent);
             }
         });
+    }
+    public void onBackPressed() {
+        if(drawerLayout.isDrawerOpen(GravityCompat.START)){
+            drawerLayout.closeDrawer(GravityCompat.START);
+        }
+        else {
+            super.onBackPressed();
+        }
     }
 }
 

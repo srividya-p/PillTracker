@@ -1,19 +1,32 @@
 package com.example.pilltracker;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
+import androidx.appcompat.widget.Toolbar;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.card.MaterialCardView;
+import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.squareup.picasso.Picasso;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -30,6 +43,13 @@ public class APISearchActivity extends AppCompatActivity {
     TextView mName, mPurpose, mDrugType, mRoute, mSubstanceName, mIndication, mDosage, mWhenUsing, mAskDoctor, mActiveIng, mStorage, emptyText;
     ProgressBar progressBar;
     MaterialCardView infoCard;
+    TextView userName, userEmail;
+    private ImageView profilePic;
+
+    private DrawerLayout drawerLayout;
+    private NavigationView navigationView;
+    private View headerView;
+    private Toolbar toolbar;
 
     private static final String TAG = "APISearchActivity";
 
@@ -50,12 +70,23 @@ public class APISearchActivity extends AppCompatActivity {
     Boolean internet_flag = false;
 
     boolean flag = false;
+    private FirebaseUser currentUser;
     private static final String BASE_URI = "https://api.fda.gov/drug/label.json?search=openfda.generic_name:";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_apisearch);
+
+        drawerLayout = findViewById(R.id.drawerlayout);
+        navigationView = findViewById(R.id.navigationview);
+        toolbar = findViewById(R.id.toolbar);
+
+        navigationView = (NavigationView) findViewById(R.id.navigationview);
+        headerView = navigationView.getHeaderView(0);
+        userName = headerView.findViewById(R.id.username);
+        profilePic = headerView.findViewById(R.id.profilePic);
+        userEmail = headerView.findViewById(R.id.usermailid);
 
         medSearchButton = findViewById(R.id.medSearchButton);
         medClearButton = findViewById(R.id.medClearButton);
@@ -77,6 +108,61 @@ public class APISearchActivity extends AppCompatActivity {
         emptyText = findViewById(R.id.emptyText);
 
         progressBar = findViewById(R.id.progressBar);
+
+        setSupportActionBar(toolbar);
+        navigationView.bringToFront();
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.navigation_open, R.string.navigation_close);
+        drawerLayout.addDrawerListener(toggle);
+        toggle.syncState();
+        navigationView.setCheckedItem(R.id.searchMedicine);
+
+        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+                switch (menuItem.getItemId()) {
+                    case R.id.logout:
+                        FirebaseAuth.getInstance().signOut();
+                        startActivity(new Intent(APISearchActivity.this, LoginActivity.class));
+                        break;
+                    case R.id.addMedicine:
+                        startActivity(new Intent(APISearchActivity.this,AddMedicineActivity.class));
+                        break;
+                    case R.id.viewMedicine:
+                        startActivity(new Intent(APISearchActivity.this,DisplayMedicineActivity.class));
+                        break;
+                    case R.id.viewStats:
+                        startActivity(new Intent(APISearchActivity.this,StatsActivity.class));
+                        break;
+                    case R.id.home_menu:
+                        startActivity(new Intent(APISearchActivity.this, DashboardActivity.class));
+                        break;
+                    case R.id.imagetoText:
+                        startActivity(new Intent(APISearchActivity.this, ImageToTextActivity.class));
+                        break;
+                    case R.id.location:
+                        String url = "http://maps.google.co.uk/maps?q=Pharmacy&hl=en";
+                        Intent locIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+                        locIntent.setClassName("com.google.android.apps.maps","com.google.android.maps.MapsActivity");
+                        startActivity(locIntent);
+                        break;
+                }
+                drawerLayout.closeDrawer(GravityCompat.START);
+                return true;
+            }
+        });
+
+        currentUser = FirebaseAuth.getInstance().getCurrentUser();
+
+        if(currentUser != null) {
+            String name = currentUser.getDisplayName();
+            String email = currentUser.getEmail();
+            Uri photoUrl = currentUser.getPhotoUrl();
+
+            userName.setText(name);
+            userEmail.setText(email);
+
+            Picasso.get().load(photoUrl).transform(new CircleTransform()).into(profilePic);
+        }
 
         medClearButton.setOnClickListener(new View.OnClickListener() {
             @Override

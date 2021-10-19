@@ -14,9 +14,9 @@
             android:title="Sign Out" />
     </group>
 
-    <group android:checkableBehavior="single">
-        <item android:title="Dashboard">
-            <menu>
+    <item android:title="Dashboard">
+        <menu>
+            <group android:checkableBehavior="single">
                 <item android:id="@+id/addMedicine"
                     android:icon="@drawable/ic_baseline_alarm_add_24"
                     android:title="Add Medicines"/>
@@ -35,7 +35,7 @@
                 <item android:id="@+id/location"
                     android:icon="@drawable/ic_baseline_location_on_24"
                     android:title="Pharmacy Near Me"/>
-            </menu>
-        </item>
-    </group>
+            </group>
+        </menu>
+    </item>
 </menu>
