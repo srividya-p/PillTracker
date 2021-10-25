@@ -36,6 +36,7 @@ import com.squareup.picasso.Picasso;
 
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
@@ -360,8 +361,9 @@ public class AddMedicineActivity extends AppCompatActivity {
 //                        setIndividualAlarm(month, day, year, actualTimings[i]+1, 0, "askNotif", mDosage.getName(), mealNames[i], "", "");
 
 //                        TEST
-                        setIndividualAlarm(month, day, year, 10, 10, "showNotif", mDosage.getName(), mealNames[i], "", "");
-                        setIndividualAlarm(month, day, year, 10, 10, "askNotif", mDosage.getName(), mealNames[i], "", "");
+                        LocalDateTime now = LocalDateTime.now();
+                        setIndividualAlarm(month, day, year, now.getHour(), now.getMinute()+1, "showNotif", mDosage.getName(), mealNames[i], "", "");
+                        setIndividualAlarm(month, day, year, now.getHour(), now.getMinute()+2, "askNotif", mDosage.getName(), mealNames[i], "", "");
                     }
                 }
                 currentDate = currentDate.plusDays(1);
@@ -380,7 +382,8 @@ public class AddMedicineActivity extends AppCompatActivity {
 //            setIndividualAlarm(month, day, year, 9, 0, "showNotifExp", mDosage.getName(), "", mDosage.getExpDate(), "rem1");
 
 //            TEST
-            setIndividualAlarm(month, day, year, 10, 15, "showNotifExp", mDosage.getName(), "", mDosage.getExpDate(), "rem2");
+            LocalDateTime now = LocalDateTime.now();
+            setIndividualAlarm(month, day, year, now.getHour(), now.getMinute()+1, "showNotifExp", mDosage.getName(), "", mDosage.getExpDate(), "rem2");
 
 
             //Setting Second Reminder
@@ -391,7 +394,7 @@ public class AddMedicineActivity extends AppCompatActivity {
 //            setIndividualAlarm(month, day, year, 9, 0, "showNotifExp", mDosage.getName(), "", mDosage.getExpDate(), "rem2");
 
 //            TEST
-            setIndividualAlarm(month, day, year, 16, 5, "showNotifExp", mDosage.getName(), "", mDosage.getExpDate(), "rem2");
+            setIndividualAlarm(month, day, year, now.getHour(), now.getMinute()+2, "showNotifExp", mDosage.getName(), "", mDosage.getExpDate(), "rem2");
         }
     }
 

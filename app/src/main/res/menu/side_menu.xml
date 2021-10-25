@@ -31,7 +31,7 @@
                     android:title="Search Medicines"/>
                 <item android:id="@+id/imagetoText"
                     android:icon="@drawable/ic_baseline_camera_alt_24"
-                    android:title="Scan Prescription"/>
+                    android:title="Scan Medicine"/>
                 <item android:id="@+id/location"
                     android:icon="@drawable/ic_baseline_location_on_24"
                     android:title="Pharmacy Near Me"/>
